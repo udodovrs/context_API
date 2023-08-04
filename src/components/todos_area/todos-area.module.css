@@ -1,0 +1,37 @@
+.green{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: green;
+	position: relative;
+	top: 8px;
+	margin: 3px;
+}
+
+.gray{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: gray;
+	position: relative;
+	top: 8px;
+	margin: 3px;
+}
+
+.title{
+	font-size: large;
+	width: 400px;
+	height: 35px;
+
+}
+
+.todo{
+	display: flex;
+	align-items: flex-start;
+	border-bottom: 2px solid goldenrod;
+}
+
+
+

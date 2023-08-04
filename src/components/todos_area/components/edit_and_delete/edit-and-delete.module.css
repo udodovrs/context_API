@@ -1,0 +1,20 @@
+.title{
+	display: inline-block;
+	width: 394px;
+	font-size: large;
+}
+
+.btn{
+	width: 40px;
+	height: 30px;
+	margin: 3px;
+}
+
+.checkBox{
+	position: relative;
+	width: 20px;
+	height: 20px;
+	top: 5px;
+	background-color: goldenrod;
+	border: none;
+}

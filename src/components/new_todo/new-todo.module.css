@@ -1,0 +1,23 @@
+.btn{
+	width: 30px;
+	height: 30px;
+	margin: 3px;
+}
+
+.input{
+	border: none;
+	height: 25px;
+	margin-left: 5px;
+	outline: none;
+	font-size: large;
+	width: 473px;
+}
+
+.wrapper{
+
+	display: inline-block;
+	border: 2px solid gray;
+	border-radius: 5px;
+	margin: 3px;
+	padding: 3px;
+}
