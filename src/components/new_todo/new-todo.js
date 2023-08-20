@@ -1,29 +1,17 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import style from './new-todo.module.css';
-import { AppContext } from '../../context'
+import { useDispatch, useSelector } from 'react-redux';
+import { newTodo } from '../../actions/new-todo';
 
 export const NewTodo = () => {
 	const [value, setValue] = useState('');
-	const [isNewTodo, setIsNewTodo] = useState(false);
-	const { update, setUpdate } = useContext(AppContext);
+	const dispatch = useDispatch();
+	const isNewTodo = useSelector((state) => state.assitState.isNewTodo )
 
 	const onNewTodo = () => {
-		setIsNewTodo(!isNewTodo);
-		if (value !== '' && isNewTodo)
-			fetch(`http://localhost:3005/todos`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json;charset=utf-8' },
-				body: JSON.stringify({
-					title: value,
-					complete: false,
-				}),
-			})
-				.then((rawResponse) => rawResponse.json())
-				.then((response) => {
-					console.log('POST:', response);
-					setUpdate(!update);
-					setValue('');
-				});
+		dispatch({type: 'isLoading'})
+		dispatch({type: 'isNewTodo', payload: !isNewTodo})
+		if (value !== '' && isNewTodo) dispatch(newTodo(value));
 	};
 	return (
 		<div className={style.wrapper}>
@@ -33,10 +21,12 @@ export const NewTodo = () => {
 					type="text"
 					value={value}
 					onChange={({ target }) => setValue(target.value)}
-					placeholder='Новая задача...'
+					placeholder="Новая задача..."
 				/>
 			)}
-			<button className={style.btn} onClick={onNewTodo}>{isNewTodo ? '✔' : '✚'}</button>
+			<button className={style.btn} onClick={onNewTodo}>
+				{isNewTodo ? '✔' : '✚'}
+			</button>
 		</div>
 	);
 };
