@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 export const TodosArea = ({ valueForSearch }) => {
 	const dispatch = useDispatch();
 	useEffect(() => {
-		dispatch({ type: 'isLoading' });
 		dispatch(getTodo);
 	}, [dispatch]);
 	const todos = useSelector((state) => state.todosState.todos);

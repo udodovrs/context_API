@@ -6,11 +6,10 @@ import { newTodo } from '../../actions/new-todo';
 export const NewTodo = () => {
 	const [value, setValue] = useState('');
 	const dispatch = useDispatch();
-	const isNewTodo = useSelector((state) => state.assitState.isNewTodo )
+	const isNewTodo = useSelector((state) => state.assitState.isNewTodo);
 
 	const onNewTodo = () => {
-		dispatch({type: 'isLoading'})
-		dispatch({type: 'isNewTodo', payload: !isNewTodo})
+		dispatch({ type: 'isNewTodo', payload: !isNewTodo });
 		if (value !== '' && isNewTodo) dispatch(newTodo(value));
 	};
 	return (

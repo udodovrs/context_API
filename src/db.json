@@ -2,13 +2,18 @@
   "todos": [
     {
       "title": "самая первая задача+1+1",
-      "complete": true,
+      "complete": false,
       "id": 1
     },
     {
       "title": "самая вторая задача+1",
-      "complete": true,
+      "complete": false,
       "id": 2
+    },
+    {
+      "title": "+1",
+      "complete": false,
+      "id": 3
     }
   ]
 }
