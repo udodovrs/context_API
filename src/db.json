@@ -7,18 +7,8 @@
     },
     {
       "title": "самая вторая задача+1",
-      "complete": false,
+      "complete": true,
       "id": 2
-    },
-    {
-      "title": "789+1",
-      "complete": false,
-      "id": 3
-    },
-    {
-      "title": "145*8",
-      "complete": false,
-      "id": 4
     }
   ]
 }
